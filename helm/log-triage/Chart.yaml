@@ -1,0 +1,6 @@
+apiVersion: v2
+name: log-triage
+description: Log and alert triage service for ops use
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

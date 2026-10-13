@@ -1,0 +1,27 @@
+replicaCount: 1
+
+image:
+  repository: log-triage
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+# Model settings. The API key is NOT set here. Create a Secret named
+# log-triage-secrets with key LLM_API_KEY, or leave secretName empty to
+# run on rules only.
+secretName: ""
+
+llm:
+  model: gpt-4o-mini
+  baseUrl: https://api.openai.com/v1
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
